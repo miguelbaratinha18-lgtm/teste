@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Barbearia RR | Ricardo Madureira</title>
+
+    <meta name="description" content="Barbearia RR - Cortes de cabelo e barba com Ricardo Madureira.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #080808;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #b58b35;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #d6ad52;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #d6ad52;
+        }
+
+        .hero {
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.85)),
+                url("assets/img/gallery/section_bg01.jpeg") center/cover;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 6vw, 60px);
+            color: #d6ad52;
+            margin: 20px 0;
+        }
+
+        .hero p {
+            font-size: 19px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 30px;
+            background: #d6ad52;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .titulo {
+            text-align: center;
+            color: #d6ad52;
+            font-size: 35px;
+            margin-bottom: 45px;
+        }
+
+        .sobre {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .sobre img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .sobre h2 {
+            color: #d6ad52;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .servicos {
+            background: #191919;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #222;
+            padding: 35px 25px;
+            border: 1px solid #8d6c2e;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #d6ad52;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #ddd;
+        }
+
+        .precos {
+            text-align: center;
+        }
+
+        .preco {
+            display: flex;
+            justify-content: space-between;
+            max-width: 500px;
+            margin: 15px auto;
+            padding: 20px;
+            background: #222;
+            border-bottom: 1px solid #d6ad52;
+            border-radius: 5px;
+        }
+
+        .preco strong {
+            color: #d6ad52;
+            font-size: 21px;
+        }
+
+        .profissional {
+            background: #191919;
+            text-align: center;
+        }
+
+        .profissional img {
+            width: 260px;
+            max-width: 100%;
+            border-radius: 12px;
+            border: 3px solid #d6ad52;
+            margin-bottom: 20px;
+        }
+
+        .profissional h3 {
+            color: #d6ad52;
+            font-size: 28px;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .galeria img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .informacoes {
+            background: #191919;
+            text-align: center;
+        }
+
+        .informacoes p {
+            margin: 15px 0;
+        }
+
+        footer {
+            background: #080808;
+            text-align: center;
+            padding: 45px 20px;
+            border-top: 2px solid #d6ad52;
+        }
+
+        footer h2 {
+            color: #d6ad52;
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: #d6ad52;
+            text-decoration: none;
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            z-index: 200;
+            box-shadow: 0 3px 12px #0008;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                justify-content: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .sobre,
+            .cards,
+            .galeria {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 55px 18px;
+            }
+
+            .hero {
+                min-height: 450px;
+            }
+
+            .titulo {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">BARBEARIA RR</div>
+
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#precos">Preços</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero" id="inicio">
+        <div>
+            <p>COM RICARDO MADUREIRA</p>
+
+            <h1>Seu estilo, nossa precisão.</h1>
+
+            <p>Qualidade, experiência e dedicação em cada corte.</p>
+
+            <a class="btn" href="https://wa.me/5519995223435">
+                Agendar horário
+            </a>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container sobre">
+
+            <img src="assets/img/gallery/about.png"
+                 alt="Interior da Barbearia RR">
+
+            <div>
+                <h2>14 anos de experiência profissional</h2>
+
+                <p>
+                    A Barbearia RR oferece um ambiente acolhedor,
+                    confortável e climatizado para você.
+
+                    Aqui você pode escolher sua música preferida,
+                    conversar sobre diversos assuntos e aproveitar
+                    um atendimento de qualidade com Ricardo Madureira.
+
+                    São 14 anos de experiência profissional e
+                    12 anos de barbearia.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="servicos" id="servicos">
+        <div class="container">
+
+            <h2 class="titulo">Nossos serviços</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Corte de cabelo</h3>
+                    <p>
+                        Cortes realizados com precisão,
+                        dedicação e atenção aos detalhes.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Corte de barba</h3>
+                    <p>
+                        Barba bem cuidada, alinhada e
+                        com o estilo que você deseja.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="profissional">
+        <div class="container">
+
+            <h2 class="titulo">Nosso profissional</h2>
+
+            <img src="assets/img/gallery/team2.png"
+                 alt="Ricardo Madureira">
+
+            <h3>Ricardo Madureira</h3>
+
+            <p>Dono do estabelecimento e barbeiro.</p>
+
+        </div>
+    </section>
+
+    <section class="precos" id="precos">
+        <div class="container">
+
+            <h2 class="titulo">Tabela de preços</h2>
+
+            <div class="preco">
+                <span>Corte de cabelo</span>
+                <strong>R$ 35,00</strong>
+            </div>
+
+            <div class="preco">
+                <span>Corte de barba</span>
+                <strong>R$ 30,00</strong>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="galeria">
+        <div class="container">
+
+            <h2 class="titulo">Conheça nossa barbearia</h2>
+
+            <div class="galeria">
+
+                <img src="assets/img/gallery/gallery67.jpeg"
+                     alt="Barbearia RR">
+
+                <img src="assets/img/gallery/gallery7.jpeg"
+                     alt="Ambiente da barbearia">
+
+                <img src="assets/img/gallery/gallery0.jpeg"
+                     alt="Interior da barbearia">
+
+                <img src="assets/img/gallery/gallery00.jpeg"
+                     alt="Espaço climatizado">
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="informacoes">
+        <div class="container">
+
+            <h2 class="titulo">Horários e localização</h2>
+
+            <p><strong>Terça a sábado:</strong> 9h às 19h</p>
+
+            <p><strong>Almoço:</strong> 12h às 13h</p>
+
+            <p><strong>Fechado:</strong> domingos, segundas e feriados</p>
+
+            <br>
+
+            <p>
+                Jardim dos Lírios, Rua das Seriemas,
+                número 935.
+            </p>
+
+            <a class="btn"
+               href="https://www.google.com/maps/search/?api=1&query=Rua+das+Seriemas+935+Jardim+dos+Lirios"
+               target="_blank"
+               rel="noopener noreferrer">
+                Ver localização
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<footer id="contato">
+
+    <h2>BARBEARIA RR</h2>
+
+    <p>Entre em contato com Ricardo Madureira.</p>
+
+    <p>
+        WhatsApp:
+        <a href="https://wa.me/5519995223435">
+            (19) 99522-3435
+        </a>
+    </p>
+
+    <p>
+        E-mail:
+        <a href="mailto:ricardomadureira1@hotmail.com">
+            ricardomadureira1@hotmail.com
+        </a>
+    </p>
+
+    <br>
+
+    <p>© <span id="ano"></span> Barbearia RR. Todos os direitos reservados.</p>
+
+</footer>
+
+<a class="whatsapp"
+   href="https://wa.me/5519995223435"
+   target="_blank"
+   rel="noopener noreferrer">
+    WhatsApp
+</a>
+
+<script>
+    document.getElementById("ano").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>
